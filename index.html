@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Catalogue</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<style>
+    .search-result-displayer{
+        z-index:10;
+        position: fixed;
+        right:20px;
+        top:60px;
+        width:450px;
+        display:none;
+        overflow: auto;
+        background-color: #EEEEEE;
+        padding:5px;
+        min-height: 50px;
+        max-height:400px
+    }
+
+    .s-box{
+        padding:10px 20px;
+        text-decoration: none;
+        border-bottom: grey solid 1px;
+        color:black;
+    }
+
+    .s-box:hover{
+        background-color: rgb(182, 178, 178);
+        cursor: pointer;
+    }
+</style>
+<body>
+    <!-- color schemes dark-indigo=#334257 blue=#476072 light blue=#548CA8  white=#EEEEEE-->
+    <nav class="navbar navbar-expand navbar-dark sticky-top" style="background-color: #334257;">
+    <div class="container-fluid">
+        <span class="navbar-brand">DEV MoviLogue</span>
+        <form class="d-flex">
+            <input class="form-control me-2 p-2" style="width:450px" value="" type="text" placeholder="Search" id="insta_searchbar">
+        </form>
+    </div>
+    </nav>
+
+    <div class="search-result-displayer text-center" id="srch-display"></div>
+
+    
+    <div class="container-fluid g-0" styel="height:275px;">
+        <img class="img-fluid" src="leon-bublitz-uDTzfsGJihw-unsplash.jpg">
+    </div>
+
+    <div class="container-fluid text-center text-white py-4" style="background-color:#334257;">
+        <h1 class="display-1 ">Explore Our Collections</h1>
+    </div>
+
+    <div class="container-fluid py-3" style="background-color:#EEEEEE ;">
+        <div class="row row-cols-3 row-cols-md-4 row-cols-lg-6 justify-content-center gy-2" >
+            <div class="col">
+                <div class="card">
+                    <img src="" class="card-img-top" id="film1-img" height=304px>
+                    <div class="card-body text-center" style="background-color:#476072;">
+                        <h5 class="card-title text-white" style="height:101px" id="film1-title"></h5>
+                        <p class="card-text text-white" style="font-size:14px;height:120px;overflow:hidden;text-overflow: ellipsis;" id="film1-plot"></p>
+                        <a href="#" class="btn btn-secondary">Watch Now</a>
+                    </div>
+                    <div class="card-footer text-muted text-center " id="film1-ratings"> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="" class="card-img-top" id="film2-img" height=304px>
+                    <div class="card-body text-center" style="background-color:#476072;">
+                        <h5 class="card-title text-white" style="height:101px" id="film2-title"></h5>
+                        <p class="card-text text-white" style="font-size:14px;height:120px;overflow:hidden;text-overflow: ellipsis;" id="film2-plot"></p>
+                        <a href="#" class="btn btn-secondary">Watch Now</a>
+                    </div>
+                    <div class="card-footer text-muted text center " id="film2-ratings"> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="" class="card-img-top" id="film3-img" height=304px>
+                    <div class="card-body text-center" style="background-color:#476072;">
+                        <h5 class="card-title text-white" style="height:101px" id="film3-title"></h5>
+                        <p class="card-text text-white" style="font-size:14px;height:120px;overflow:hidden;text-overflow: ellipsis;" id="film3-plot"></p>
+                        <a href="#" class="btn btn-secondary">Watch Now</a>
+                    </div>
+                    <div class="card-footer text-muted text center " id="film3-ratings"> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" >
+                <div class="card">
+                    <img src="" class="card-img-top" id="film4-img" height=304px>
+                    <div class="card-body text-center" style="background-color:#476072;">
+                        <h5 class="card-title text-white" style="height:101px" id="film4-title"></h5>
+                        <p class="card-text text-white" style="font-size:14px;height:120px;overflow:hidden;text-overflow: ellipsis;" id="film4-plot"></p>
+                        <a href="#" class="btn btn-secondary">Watch Now</a>
+                    </div>
+                    <div class="card-footer text-muted text center " id="film4-ratings"> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" >
+                <div class="card">
+                    <img src="" class="card-img-top" id="film5-img" height=304px>
+                    <div class="card-body text-center" style="background-color:#476072;">
+                        <h5 class="card-title text-white" style="height:101px" id="film5-title"></h5>
+                        <p class="card-text text-white" style="font-size:14px;height:120px;overflow:hidden;text-overflow: ellipsis;" id="film5-plot"></p>
+                        <a href="#" class="btn btn-secondary">Watch Now</a>
+                    </div>
+                    <div class="card-footer text-muted text-center " id="film5-ratings"> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" >
+                <div class="card">
+                    <img src="" class="card-img-top" id="film6-img" height=304px>
+                    <div class="card-body text-center" style="background-color:#476072;">
+                        <h5 class="card-title text-white" style="height:101px" id="film6-title"></h5>
+                        <p class="card-text text-white" style="font-size:14px;height:120px;overflow:hidden;text-overflow: ellipsis;" id="film6-plot"></p>
+                        <a href="#" class="btn btn-secondary">Watch Now</a>
+                    </div>
+                    <div class="card-footer text-muted text-center " id="film6-ratings"> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" >
+                <div class="card">
+                    <img src="" class="card-img-top" id="film7-img" height=304px>
+                    <div class="card-body text-center" style="background-color:#476072;">
+                        <h5 class="card-title text-white" style="height:101px" id="film7-title"></h5>
+                        <p class="card-text text-white" style="font-size:14px;height:120px;overflow:hidden;text-overflow: ellipsis;" id="film7-plot"></p>
+                        <a href="#" class="btn btn-secondary">Watch Now</a>
+                    </div>
+                    <div class="card-footer text-muted text-center " id="film7-ratings"> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" >
+                <div class="card">
+                    <img src="" class="card-img-top" id="film8-img" height=304px>
+                    <div class="card-body text-center" style="background-color:#476072;">
+                        <h5 class="card-title text-white" style="height:101px" id="film8-title"></h5>
+                        <p class="card-text text-white" style="font-size:14px;height:120px;overflow:hidden;text-overflow: ellipsis;" id="film8-plot"></p>
+                        <a href="#" class="btn btn-secondary">Watch Now</a>
+                    </div>
+                    <div class="card-footer text-muted text-center " id="film8-ratings"> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" >
+                <div class="card">
+                    <img src="" class="card-img-top" id="film9-img" height=304px>
+                    <div class="card-body text-center" style="background-color:#476072;">
+                        <h5 class="card-title text-white" style="height:101px" id="film9-title"></h5>
+                        <p class="card-text text-white" style="font-size:14px;height:120px;overflow:hidden;text-overflow: ellipsis;" id="film9-plot"></p>
+                        <a href="#" class="btn btn-secondary">Watch Now</a>
+                    </div>
+                    <div class="card-footer text-muted text-center " id="film9-ratings"> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" >
+                <div class="card">
+                    <img src="" class="card-img-top" id="film10-img" height=304px>
+                    <div class="card-body text-center" style="background-color:#476072;">
+                        <h5 class="card-title text-white" style="height:101px" id="film10-title"></h5>
+                        <p class="card-text text-white" style="font-size:14px;height:120px;overflow:hidden;text-overflow: ellipsis;" id="film10-plot"></p>
+                        <a href="#" class="btn btn-secondary">Watch Now</a>
+                    </div>
+                    <div class="card-footer text-muted text-center " id="film10-ratings"> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" >
+                <div class="card">
+                    <img src="" class="card-img-top" id="film11-img" height=304px>
+                    <div class="card-body text-center" style="background-color:#476072;">
+                        <h5 class="card-title text-white" style="height:101px" id="film11-title"></h5>
+                        <p class="card-text text-white" style="font-size:14px;height:120px;overflow:hidden;text-overflow: ellipsis;" id="film11-plot"></p>
+                        <a href="#" class="btn btn-secondary">Watch Now</a>
+                    </div>
+                    <div class="card-footer text-muted text-center " id="film11-ratings"> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" >
+                <div class="card">
+                    <img src="" class="card-img-top" id="film12-img" height=304px>
+                    <div class="card-body text-center" style="background-color:#476072;">
+                        <h5 class="card-title text-white" style="height:101px" id="film12-title"></h5>
+                        <p class="card-text text-white" style="font-size:14px;height:120px;overflow:hidden;text-overflow: ellipsis;" id="film12-plot"></p>
+                        <a href="#" class="btn btn-secondary">Watch Now</a>
+                    </div>
+                    <div class="card-footer text-muted text-center " id="film12-ratings"> 
+                    </div>
+                </div>
+            </div>
+
+ 
+        </div>
+    </div>
+
+    <div class="container-fluid " style="background-color:#548CA8 ;">
+        <div class="row py-5">
+          <div class="col-12 my-2 col-sm-4 text-center text-white" style="font-weight: 500;letter-spacing:4px"> DEV MoviLogue </div>
+          <div class="col-12 my-2 col-sm-4 text-center text-white"> copyright ~ Ratan Kumar</div>
+          <div class="col-12 my-2 col-sm-4 text-center">
+            <img src="facebook.svg" class="mx-2" width=30px height=30px>
+            <img src="linkedin.svg" class="mx-2" width=30px height=30px>
+            <img src="twitter.svg" class="mx-2" width=30px height=30px>
+          </div>
+        </div>
+      </div>
+
+    
+  <script src="imdb_first.js">
+  </script>
+</body>
+</html>
